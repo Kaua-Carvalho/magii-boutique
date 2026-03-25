@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --pink-bg: #f6d4cb;
+  --pink-mid: #eab9af;
+  --black: #070707;
+  --white: #ffffff;
+  --shadow: rgba(0,0,0,0.13);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--pink-bg);
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, #f9b8c0 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, #f5aab5 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 48px 24px 0;
+}
+
+.avatar-wrap {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeDown 0.6s ease both;
+}
+
+.avatar-wrap img {
+  width: 75px;
+  height: 55px;
+}
+
+.profile-name {
+  margin-top: 18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--black);
+  font-weight: bold;
+  letter-spacing: -0.01em;
+  animation: fadeDown 0.6s 0.1s ease both;
+}
+
+.profile-sub {
+  margin-top: 6px;
+  font-size: 1.30rem;
+  color: #6b4f55;
+  animation: fadeDown 0.6s 0.18s ease both;
+}
+
+.links-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.btn-wrap {
+  animation: fadeUp 0.55s ease both;
+}
+
+/* ── Botão ── */
+.link-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 56px;
+  padding: 0 24px;
+  height: 60px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 18px var(--shadow);
+  transform: scale(1);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease;
+}
+
+.link-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+
+.link-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.btn-icon {
+  position: absolute;
+  left: 20px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-icon img {
+  width: 26px;   
+  height: 26px;
+  object-fit: contain;
+}
+
+.btn-label {
+  flex: 1;
+  text-align: center;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 24px 28px;
+  margin-top: 56px;
+  animation: fadeUp 0.6s 0.6s ease both;
+}
+
+.footer-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.footer-logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo img {
+  width: 90px;
+  height: 66px;
+  object-fit: contain;
+}
+
+.footer-company {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-copy {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.42);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
