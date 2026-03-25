@@ -59,7 +59,7 @@ body::before {
 
 .avatar-wrap img {
   width: 75px;
-  height: 55px;
+  height: 75px;
 }
 
 .profile-name {
@@ -183,7 +183,7 @@ footer {
 
 .footer-logo img {
   width: 90px;
-  height: 66px;
+  height: 90px;
   object-fit: contain;
 }
 
